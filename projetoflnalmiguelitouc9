@@ -1,0 +1,45 @@
+
+
+def cadastrar_produto():
+    
+    print("--- Cadastro de Novo Produto ---")
+    
+    nome = input("Digite o nome do produto: ")
+    
+    while True:
+        try:
+    
+            preco_str = input("Digite o preço do produto (ex: 15.50): ")
+            preco = float(preco_str)
+           
+            if preco < 0:q  
+                print("O preço deve ser um valor positivo. Tente novamente.")
+                continue 
+            break 
+        except ValueError:
+            print("Entrada inválida. Por favor, digite um número para o preço.")
+    
+
+    while True:
+        try:
+        
+            quantidade_str = input("Digite a quantidade em estoque: ")
+            quantidade = int(quantidade_str)
+        
+            if quantidade < 0:
+                print("A quantidade deve ser zero ou um valor positivo inteiro. Tente novamente.")
+                continue 
+            break 
+        except ValueError:
+            print("Entrada inválida. Por favor, digite um número inteiro para a quantidade.")
+
+    print("\n--- Dados do Produto Coletados ---")
+    print(f"Nome: {nome}")
+    print(f"Preço: R$ {preco:.2f}")
+    print(f"Quantidade: {quantidade}")
+    
+    return {"nome": nome, "preco": preco, "quantidade": quantidade}
+
+produto_cadastrado = cadastrar_produto()
+
+
